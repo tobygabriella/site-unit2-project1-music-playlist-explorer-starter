@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(225, 209, 240);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#randomPlaylist{
+    display:flex;
+    flex-direction: row; 
+}
+
+header{
+    background-color: rgb(228, 204, 223);
+    padding:15px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 5px 5px;
+    text-align: center;
+    font-size:large;
+}
+
+#randomPlaylist{   
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 10%;
+    top: 25%;
+    width: 70%; /* Full width */
+    height: 60%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(242, 185, 236); /* Black w/ opacity */
+    border-radius: 14px;
+    padding-left:70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right:70px;
+ }
+
+ .song{
+    display:flex;
+    border:2px solid black;
+    border-radius: 14px;
+    margin:10px;
+ }
+
+ .songText{
+    line-height: 0.2;
+ }
+.songCards{  
+    margin:20px;
+    border-radius: 14px;
+    width:150%;
+ }
+
+#left{
+    line-height: 0.2;
+    border:2px solid black;
+    border-radius: 14px;
+    margin:50px;
+    padding: 50px;
+}
+ 

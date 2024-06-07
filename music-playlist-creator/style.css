@@ -4,3 +4,138 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+
+#playlist-cards{
+    display: flex;
+    flex-direction:row;
+    gap: 10px;
+    flex-wrap:wrap;
+    padding: 40px;
+}
+
+header{
+    background-color: lightblue;
+    padding:15px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 5px 5px;
+    text-align: center;
+}
+
+.playlist{
+    background-color: rgb(171, 195, 214);
+    border-radius: 14px;
+    color:grey;
+    padding-bottom:50px;
+    line-height: 0.2;
+    margin:15px;
+}
+
+.playlist:hover{
+    background-color: rgb(200, 195, 195);
+   
+}
+
+#playlist img{
+    border-radius: 14px 14px 0px 0px;
+}
+
+#modal-overlay {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 17%;
+    top: 25%;
+    width: 55%; /* Full width */
+    height: 50%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: white; /* Black w/ opacity */
+    border-radius: 14px;
+    padding-left:70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right:70px;
+ }
+ 
+.modal-content {
+    display:flex; 
+    flex-direction:column;
+    line-height: 0.2;
+    text-align: left;
+    padding:5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.song{
+    border:2px solid lightblue;
+    display:flex;
+    margin:10px;
+    border-radius: 14px;
+}
+
+#shuffle{
+    width:70px;
+    height:20px;
+    background-color: blue;
+    color:white;
+    border-radius: 10px;
+}
+
+#heart:hover{
+    background-color:red;
+}
+
+.modal-content img{
+    padding-right:20px;
+}
+ .modal-header{
+    display:flex;
+    line-height: 0.2;
+ }
+
+ .modal-header img{
+    padding-right:20px;
+ }
+ 
+ .modal-text{
+    color:grey;
+ }
+
+ @media only screen and (max-width: 600px) {
+    #playlist-cards{
+        display: flex;
+        flex-direction: column;
+    }
+    
+#modal-overlay {
+        display: none; /*Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 17%;
+        top: 25%;
+        width: 55%; /* Full width */
+        height: 50%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: white; /* Black w/ opacity */
+        border-radius: 14px;
+        padding-left:70px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right:70px;
+     }
+  }
+
+  #close-button{
+    color: rgb(40, 106, 150);
+    float:right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    
+  }
+
+  #close:hover, .close:focus{
+    cursor:pointer;
+  }
+ 

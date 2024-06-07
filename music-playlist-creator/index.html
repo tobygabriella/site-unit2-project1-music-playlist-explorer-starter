@@ -8,15 +8,59 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            background-image: url(/music-playlist-creator/assets/img/background.jpg);
+            background-repeat:no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <!-- Your header content here -->
+        <div>
+        <nav><a href="/music-playlist-creator/feauturePage/featured.html"><img src="/music-playlist-creator/assets/img/feature.jpg" height="60" width="60"></a> </nav>
+        </div>
+        
+        <h2>Music Playlist Explorer</h2>
     </header>
 
     <main> 
-        <!-- Your main content here -->
+        <section id="playlist-cards">
+            <div class="playlist">
+                <img src="./assets/img/playlist.png" width="200" height="200">
+                <h3>Playlist Title</h3>
+                <p>creator name</p>
+                <img src="/music-playlist-creator/assets/img/heart.png" width="20" height="20">
+            </div>          
+        </section>
     </main>
+
+    <section id="modal-overlay" >
+        <div>
+            <div class="modal-header">
+                <img id="headerSong" src="./assets/img/playlist.png" width="120" height="120" >
+                <div class="modal-text">
+                    <h3 id="playlist-title">Playlist Title</h3>
+                    <p id="creator-name">creator name</p>
+                </div>
+            </div> 
+                <span id="close-button">&times;</span>
+            </div>   
+            <button id="shuffle">Shuffle</button>
+        </div>
+
+        <div class="modal-content">
+
+            <!-- <img src="./assets/img/playlist.png" width="70" height="70" >
+            <div class="modal-text">
+            <p>song title</p>
+            <p>Artist name</p>
+            <p>Album name</p>
+            </div> -->
+        </div>
+    </section>
 
     <footer>
         <!-- Your footer content here -->

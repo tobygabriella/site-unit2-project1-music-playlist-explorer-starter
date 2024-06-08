@@ -1,6 +1,5 @@
 const modal = document.getElementById("modal-overlay");
 const span = document.getElementById("close-button");
-console.log(span);
 
 let playlistData = data;
 
@@ -19,10 +18,13 @@ function renderSongs(playlistArray) {
                 <p>${playlistSongs.title}</p>
                 <p>${playlistSongs.artist}</p>
                 <p>${playlistSongs.album}</p>
+                <p>${playlistSongs.duration}</p>
             </div>  
+            <div class="songTime>
+                <p>${playlistSongs.duration}</p>
+            </div>
         </div>
         `;
-        console.log(songElement)
         songElement.appendChild(songCard);
     }
 }
@@ -35,7 +37,6 @@ function openModal(playlistData, index) {
     modal.style.display = "block";
     renderSongs(playlistArray);
     
-
     let shuffleButton = document.getElementById('shuffle');
     shuffleButton.addEventListener('click', function (event) {
         shuffleSongs(playlistData.playlists[index])
@@ -46,10 +47,7 @@ span.onclick = function () {
     modal.style.display = "none";
 };
 
-
-console.log("lll", playlistData.playlists[0].playlist_name)
-
-function showPlaylistCard(playlistData) {
+function showPlaylistCard(playlistData) {    
     let playlistElement = document.getElementById('playlist-cards');
     playlistElement.innerHTML = "";
     for (let i = 0; i < playlistData.playlists.length; i++) {
@@ -59,11 +57,10 @@ function showPlaylistCard(playlistData) {
         playlistCard.addEventListener('click', function (event) {
              openModal(playlistData, i)
          });
-        console.log("i love", playlist.playlistID)
         playlistCard.innerHTML = `
             <img src="${playlist.playlist_art}" alt="song cover" class="song cover">
-            <h3>${playlist.playlist_name}</h3>
-            <p>${playlist.playlist_creator}</p>
+            <h3 class=playlistName>${playlist.playlist_name}</h3>
+            <p class=playlistcreator>${playlist.playlist_creator}</p>
             <span>
             
             <i id=heart-${playlist.playlistID} class="fa fa-heart" style="font-size:20px;color:red"></i>
@@ -78,7 +75,6 @@ function showPlaylistCard(playlistData) {
         const heart = document.getElementById(`heart-${playlist.playlistID}`);
         const likeElement= document.getElementById(`like-count-${playlist.playlistID}`);
         heart.addEventListener('click', function (event) {
-            console.log('clicked')
             event.stopPropagation()
             playlist.likeCount++;
             if(playlist.likeCount>0){
@@ -104,6 +100,21 @@ function shuffleSongs(playlist){
     }
     renderSongs(playlist)
 }
+const searchBar = document.getElementById('search-input');
+searchBar.addEventListener('keyup', (event)=>{
+    const searchTerm = event.target.value.toLowerCase();
+    const playlists= document.querySelectorAll('.playlist');
+    playlists.forEach(playlist => {
+        const playlistName = playlist.querySelector('.playlistName').textContent.toLowerCase();
+        const playlistCreator = playlist.querySelector('.playlistcreator').textContent.toLowerCase();
+        if(playlistName.includes(searchTerm)|| playlistCreator.includes(searchTerm)){
+            playlist.style.display ='block';
+        }
+        else{
+            playlist.style.display ='none';
+        }
+    })
+});
 
 showPlaylistCard(playlistData);
 

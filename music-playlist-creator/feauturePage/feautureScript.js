@@ -17,7 +17,6 @@ function renderSongs(playlistArray) {
             <p>${playlistSongs.album}</p>
         </div>       
         `;
-        console.log(songElement)
         songElement.appendChild(songCard);
     }
 }
@@ -33,7 +32,6 @@ function displayPlaylist(playlistData ) {
 
 function randomPlaylist(){
     let randomNum= Math.floor(Math.random()*(playlistData.playlists.length+1)); 
-    //console.log(randomNum)     ;
     return randomNum;
 }
 

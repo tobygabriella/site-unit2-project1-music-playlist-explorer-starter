@@ -21,14 +21,14 @@ header{
 }
 
 #randomPlaylist{   
-    position: absolute; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: absolute; 
+    z-index: 1; 
     left: 10%;
     top: 25%;
-    width: 70%; /* Full width */
-    height: 60%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(242, 185, 236); /* Black w/ opacity */
+    width: 70%; 
+    height: 60%; 
+    overflow: auto; 
+    background-color: rgb(242, 185, 236); 
     border-radius: 14px;
     padding-left:70px;
     padding-top: 20px;
